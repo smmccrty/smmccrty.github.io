@@ -17,10 +17,10 @@ function updateConnectingLines() {
         const isNextActive = nextItem ? nextItem.classList.contains('active') : false;
         
         // Define colors
-        const activeStart = '#22c55e';
-        const activeEnd = '#15803d';
-        const inactiveStart = '#3b82f6';
-        const inactiveEnd = '#1e40af';
+        const activeStart = '#06b6d4';
+        const activeEnd = '#0891b2';
+        const inactiveStart = '#a8a29e';
+        const inactiveEnd = '#78716c';
         
         // Determine gradient based on current and next item states
         let gradient;
