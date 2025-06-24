@@ -22,7 +22,7 @@ h3 {
     color: #1a1a1a;
     font-weight: 400;
     margin-bottom: 20px;
-    font-size: 1.4em;
+    font-size: 2em;
 }
 
 h4 {
@@ -84,8 +84,8 @@ main {
 
 .bio-contact {
     position: absolute;
-    bottom: 3%;
-    right: 5%;
+    bottom: 0px;
+    right: 4%;
     text-align: right;
 }
 
@@ -310,6 +310,7 @@ embed {
     border: none;
     width: 100%;
     outline: none;
+    margin-bottom: 30px;
 }
 
 .socials {
@@ -387,7 +388,7 @@ a:has(img) {
 .research-subsection {
     max-width: 1200px;
     margin: 0 auto;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     margin-top: 20px;
 }
 
@@ -574,7 +575,7 @@ a:has(img) {
 }
 
 .projects-container {
-    margin-top: 60px;
+    margin-top: 20px;
 }
 
 .project-item {
