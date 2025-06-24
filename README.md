@@ -1,0 +1,1 @@
+Code for Samuel McCarty's professional website.

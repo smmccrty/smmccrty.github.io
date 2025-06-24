@@ -3,13 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samuel McCarty | Astrophysicist</title>
+    <meta http-equiv="Content-Security-Policy" 
+    content="default-src 'self'; 
+             style-src 'self' 'unsafe-inline' fonts.googleapis.com; 
+             font-src fonts.gstatic.com; 
+             img-src 'self' data:;">
+    <title>Samuel McCarty | Astrophysicist & PhD Student at Harvard</title>
+    <meta name="description" content="Samuel McCarty is a first-year PhD student in Astronomy & Astrophysics at Harvard & Smithsonian.">
+    <meta name="author" content="Samuel McCarty">
+    <link rel="canonical" href="https://smmccrty.github.io/">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Desktop Sidebar (hidden on mobile) -->
     <div class="sidebar">
         <header class="header-text">
             <h1>Samuel <br>McCarty</h1>
@@ -41,32 +50,38 @@
             </div>
         </nav>
         <div class="socials">
-            <a target="_blank" rel="noopener noreferrer" href="mailto:smmccrty@uw.edu">
+            <a target="_blank" rel="noopener noreferrer nofollow"  href="mailto:smmccrty@uw.edu">
                 <img src="assets/email_icon.png" alt="Email icon button." class="logo email">
             </a>
-            <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/samuel-mccarty-b40b76212/">
+            <a target="_blank" rel="noopener noreferrer nofollow"  href="https://www.linkedin.com/in/samuel-mccarty-b40b76212/">
                 <img src="assets/linkedin_icon.png" alt="LinkedIn icon button." class="logo linkedin">
             </a>
-            <a target="_blank" rel="noopener noreferrer" href="https://github.com/smmccrty">
+            <a target="_blank" rel="noopener noreferrer nofollow"  href="https://github.com/smmccrty">
                 <img src="assets/github-mark-white.png" alt="Github icon button." class="logo github">
             </a>
-            <a target="_blank" rel="noopener noreferrer" href="https://orcid.org/0009-0008-5043-6220">
+            <a target="_blank" rel="noopener noreferrer nofollow"  href="https://orcid.org/0009-0008-5043-6220">
                 <img src="assets/orcid_icon.svg" alt="OrcID icon button." class="logo orcid">
             </a>
         </div>
-      </div>
+    </div>
+
+    <!-- Mobile Header (hidden on desktop) -->
+    <div class="mobile-header">
+        <h1 class="mobile-name">Samuel McCarty</h1>
+        <h2 class="mobile-subtitle">Astrophysicist | PhD Student at Harvard</h2>
+    </div>
 
     <!-- Main content -->
-    <div class = "subtle-grey-patches"></div>
+    <div class="subtle-grey-patches"></div>
 
     <main>        
         <section id="bio">
             <h2 class="main-name">Samuel Darian McCarty</h2>
-            <h3 class="subtitle">First year PhD student in Astronomy & Astrophysics at the <a target="_blank" rel="noopener noreferrer" href="https://www.cfa.harvard.edu/" class="in-text-link harvard-accent">Center for Astrophysics | Harvard & Smithsonian</a></h3>
+            <h3 class="subtitle">First year PhD student in Astronomy & Astrophysics at the <a target="_blank" rel="noopener noreferrer nofollow"  href="https://www.cfa.harvard.edu/" class="in-text-link harvard-accent">Center for Astrophysics | Harvard & Smithsonian</a></h3>
             <img src="assets/headshot.jpg" alt="Professional headshot of Samuel McCarty" class="headshot">
             <div class="text-container bio">
                 <p> I am an astrophysicist broadly interested in extragalactic astronomy and cosmology (i.e. the big stuff). I've recently earned a B.S. 
-                    <i>magna cum laude</i> with departmental honors in Physics and Astronomy from the <a target="_blank" rel="noopener noreferrer" href="https://astro.washington.edu/" class="in-text-link uw-accent">University of Washington</a> (Go Dawgs!), and will be starting a PhD in Astronomy 
+                    <i>magna cum laude</i> with departmental honors in Physics and Astronomy from the <a target="_blank" rel="noopener noreferrer nofollow"  href="https://astro.washington.edu/" class="in-text-link uw-accent">University of Washington</a> (Go Dawgs!), and will be starting a PhD in Astronomy 
                     & Astrophysics at the Center for Astrophysics | Harvard & Smithsonian in Fall 2025. During my undergrad, I worked on a variety of research projects 
                     including simulating gas physics of the intergalactic medium with Dr. Matthew McQuinn, using absorption spectra to study the circumgalactic medium with Dr. 
                     Jessica Werk, and developing a Support Vector Machine to classify observations of exoplanets with Dr. Victoria Meadows. In my senior thesis, I built a 
@@ -78,9 +93,25 @@
                 </p>
             </div>
             <h4 class="bio-contact">
-                smmccrty@uw.edu<br><br>Office<br>1234 example way<br>Cambridge, MA 02138<br><br>
+                smmccrty-at-uw.edu<br><br>Office<br>1234 example way<br>Cambridge, MA 02138<br><br>
             </h4>
         </section>
+
+        <!-- Mobile Social Links (shown only on mobile) -->
+        <div class="mobile-socials">
+            <a target="_blank" rel="noopener noreferrer nofollow"  href="mailto:smmccrty@uw.edu">
+                <img src="assets/email_icon.png" alt="Email icon button." class="logo email">
+            </a>
+            <a target="_blank" rel="noopener noreferrer nofollow"  href="https://www.linkedin.com/in/samuel-mccarty-b40b76212/">
+                <img src="assets/linkedin_icon.png" alt="LinkedIn icon button." class="logo linkedin">
+            </a>
+            <a target="_blank" rel="noopener noreferrer nofollow"  href="https://github.com/smmccrty">
+                <img src="assets/github-mark-white.png" alt="Github icon button." class="logo github">
+            </a>
+            <a target="_blank" rel="noopener noreferrer nofollow"  href="https://orcid.org/0009-0008-5043-6220">
+                <img src="assets/orcid_icon.svg" alt="OrcID icon button." class="logo orcid">
+            </a>
+        </div>
 
         <div class="divider"></div>
 

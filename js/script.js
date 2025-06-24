@@ -68,44 +68,59 @@ function handleScrollEnd() {
     window.removeEventListener('scrollend', handleScrollEnd);
 }
 
-// Click event listeners
-navItems.forEach(item => {
-    item.addEventListener('click', (e) => {
-        isScrollingFromClick = true;
-        const targetSection = document.getElementById(item.dataset.section);
-        if (targetSection) {
-            targetSection.scrollIntoView({ behavior: 'smooth' });
-        }
-        updateActiveNav(item.dataset.section);
-        
-        window.addEventListener('scrollend', handleScrollEnd);
-    });
-});
-
-// Intersection Observer for scroll detection
-const observerOptions = {
-    root: null,
-    rootMargin: '-20% 0px -50% 0px',
-    threshold: 0
-};
-
-const observer = new IntersectionObserver((entries) => {
-    if (!isScrollingFromClick) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                updateActiveNav(entry.target.id);
-            }
+// Only add navigation functionality if sidebar is visible (desktop)
+function initializeNavigation() {
+    const sidebar = document.querySelector('.sidebar');
+    
+    // Check if sidebar is visible (desktop mode)
+    if (window.getComputedStyle(sidebar).display !== 'none') {
+        // Click event listeners
+        navItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                isScrollingFromClick = true;
+                const targetSection = document.getElementById(item.dataset.section);
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+                updateActiveNav(item.dataset.section);
+                
+                window.addEventListener('scrollend', handleScrollEnd);
+            });
         });
+
+        // Intersection Observer for scroll detection
+        const observerOptions = {
+            root: null,
+            rootMargin: '-20% 0px -50% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            if (!isScrollingFromClick) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        updateActiveNav(entry.target.id);
+                    }
+                });
+            }
+        }, observerOptions);
+
+        // Observe all sections
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Set initial active state
+        updateActiveNav('bio');
     }
-}, observerOptions);
+}
 
-// Observe all sections
-sections.forEach(section => {
-    observer.observe(section);
-});
+// Initialize navigation on page load
+document.addEventListener('DOMContentLoaded', initializeNavigation);
 
-// Initialize connecting lines on page load
-document.addEventListener('DOMContentLoaded', () => {
-    // Set initial active state (typically the first section)
-    updateActiveNav('bio');
+// Re-initialize navigation on window resize (for responsive behavior)
+window.addEventListener('resize', () => {
+    // Debounce the resize event
+    clearTimeout(window.resizeTimeout);
+    window.resizeTimeout = setTimeout(initializeNavigation, 250);
 });

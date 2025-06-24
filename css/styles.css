@@ -4,11 +4,11 @@ html {
 
 body {
     background-image: url('../assets/jwst_deep_blur.png');
-    background-size: cover; /* Scales image to cover entire area */
+    background-size: cover;
     background-repeat: repeat;
     background-position: -30px -150px;
     font-family: 'Lexend', sans-serif;
-    font-weight: 300; /* This becomes your site-wide default */
+    font-weight: 300;
 }
 
 h2 {
@@ -33,8 +33,8 @@ h4 {
 }
 
 p {
-    line-height: 1.7; /* Increased line spacing */
-    max-width: 100ch; /* Limit line length to ~75 characters */
+    line-height: 1.7;
+    max-width: 100ch;
     margin-top: 0px;
     margin-bottom: 0px;
 }
@@ -42,8 +42,8 @@ p {
 section {
     display: block;
     position: relative;
-    margin-bottom: 0px; /* Add significant space between sections */
-    padding: 0px 0; /* Add vertical padding within sections */
+    margin-bottom: 0px;
+    padding: 0px 0;
 }
 
 body, html {
@@ -55,7 +55,7 @@ main {
     margin-top: 0;
     margin-left: 20vw;
     margin-right: 10vw;
-    padding: 40px 3.5% 40px 3.5%; /* Increased top/bottom padding */
+    padding: 40px 3.5% 40px 3.5%;
     background-color: #ffffff;
 }
 
@@ -79,7 +79,7 @@ main {
     top: 3%;
     right: 3%;
     width: 40%;
-    border-radius: 25px; /* Adjust the value for more/less rounding */
+    border-radius: 25px;
 }
 
 .bio-contact {
@@ -91,12 +91,12 @@ main {
 
 .text-container {
     background-color: #fef7ed;
-    padding-left: 35px; /* Increased from 20px */
-    padding-right: 35px; /* Increased from 20px */
-    padding-top: 10px; /* Increased from 20px */
-    padding-bottom: 10px; /* Increased from 20px */
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     border-radius: 25px;
-    margin: 20px 0; /* Add vertical margins */
+    margin: 20px 0;
 }
 
 .bio {
@@ -112,10 +112,9 @@ main {
 
 .main-name::after {
     content: '';
-    position: absolute;
+    display: block;
     margin-left: 20px;
-    top: 2.5em;
-    left: 40px;
+    margin-top: 10px;
     width: 60px;
     height: 3px;
     background: linear-gradient(90deg, #838282, #adadad);
@@ -129,7 +128,7 @@ main {
 }
 
 footer {
-    margin-left: 20vw; /* Sidebar width + some margin */
+    margin-left: 20vw;
     margin-right: 10vw;
     margin-top: 0vh;
     padding: 5%;
@@ -246,12 +245,65 @@ header {
 }
 
 .nav-item.active .label {
-    color: #67e8f9;header
+    color: #67e8f9;
     font-weight: 600;
 }
 
+/* Mobile header - hidden by default */
+.mobile-header {
+    display: none;
+    background-color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
 
-/* More visible section backgrounds */
+.mobile-name {
+    font-size: 2.2em;
+    font-weight: 500;
+    margin: 0;
+    color: #000000;
+}
+
+.mobile-subtitle {
+    font-size: 1.1em;
+    font-weight: 300;
+    margin: 10px 0 0 0;
+    color: #1a1a1a;
+}
+
+/* Mobile social links */
+.mobile-socials {
+    display: none;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    margin-top: 20px;
+}
+
+.mobile-socials .logo {
+    width: 32px;
+    height: 32px;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.mobile-socials .logo:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.mobile-socials .email,
+.mobile-socials .orcid {
+    filter: invert(0%) brightness(0.8);
+}
+
+.mobile-socials .email:hover,
+.mobile-socials .orcid:hover {
+    filter: invert(0%) brightness(1);
+}
+
 #bio {
     background: 
         radial-gradient(circle at 15% 20%, rgba(200, 210, 230, 0.3) 0%, transparent 35%),
@@ -302,8 +354,8 @@ header {
     height: 3px;
     background: linear-gradient(90deg, #c2c3c5, rgba(90, 100, 130, 1));
     opacity: 0.5;
-    margin-top: 80px; /* Increased from 50px */
-    margin-bottom: 80px; /* Increased from 50px */
+    margin-top: 80px;
+    margin-bottom: 80px;
 }
 
 embed {
@@ -311,12 +363,6 @@ embed {
     width: 100%;
     outline: none;
     margin-bottom: 30px;
-}
-
-.socials {
-    position: absolute;
-    bottom: 10%;
-    left: 15%;
 }
 
 .socials {
@@ -347,13 +393,11 @@ embed {
     filter: brightness(1.1);
 }
 
-/* Remove the individual positioning since we're using flexbox */
 .github, .linkedin, .email, .orcid {
     position: static;
     left: auto;
 }
 
-/* Keep the color filters for email and orcid */
 .email {
     filter: invert(100%) brightness(0.9);
 }
@@ -398,9 +442,9 @@ a:has(img) {
 
 .research-subsection h2::after {
     content: '';
-    position: absolute;
-    top: 2.5em;
-    left: 40px;
+    display: block;
+    margin-top: 10px;
+    margin-left: 0px;
     width: 60px;
     height: 3px;
     background: linear-gradient(90deg, #838282, #adadad);
@@ -415,7 +459,6 @@ a:has(img) {
     align-items: start;
 }
 
-/* First row: images left, content spans middle + right */
 .images-1 {
     grid-column: 2 / 4;
     grid-row: 1;
@@ -432,7 +475,6 @@ a:has(img) {
     grid-row: 1;
 }
 
-/* Second row: content spans left + middle, images right */
 .content-2 {
     grid-column: 3;
     grid-row: 2;
@@ -459,7 +501,6 @@ a:has(img) {
     transform: scale(1.05);
 }
 
-/* Images-1 arrangement (2 images) */
 .images-1 .image-container:nth-child(1) {
     position: absolute;
     left: 0%;
@@ -484,7 +525,6 @@ a:has(img) {
     object-fit: cover;
 }
 
-/* Images-2 arrangement (3 images) */
 .images-2 .image-container:nth-child(1) {
     position: absolute;
     left: 0%;
@@ -509,7 +549,6 @@ a:has(img) {
     object-fit: cover;
 }
 
-/* Image captions */
 .image-container {
     position: relative;
     display: inline-block;
@@ -539,39 +578,9 @@ a:has(img) {
 }
 
 .research-interests, .research-methods {
-    font-size: 16px;
     line-height: 1.6;
     color: #333;
     margin: 0;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .research-header {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto auto;
-        gap: 20px;
-    }
-    
-    .images-1, .content-1, .content-2, .images-2 {
-        grid-column: 1;
-    }
-    
-    .images-1 {
-        grid-row: 1;
-    }
-    
-    .content-1 {
-        grid-row: 2;
-    }
-    
-    .content-2 {
-        grid-row: 3;
-    }
-    
-    .images-2 {
-        grid-row: 4;
-    }
 }
 
 .projects-container {
@@ -585,14 +594,12 @@ a:has(img) {
     background-color: #fefbf7;
     border-radius: 15px;
     border-left: 4px solid #3b82f6;
-
     display: grid;
     grid-template-columns: 1fr 0.5fr;
     align-items: start;
     row-gap: 0;
     column-gap: 50px;
-    grid-template-rows: auto auto; /* Explicit row sizing */
-
+    grid-template-rows: auto auto;
 }
 
 .project-item h4 {
@@ -624,15 +631,620 @@ a:has(img) {
 
 .research-interests p,
 .research-methods p {
-    max-width: 100ch; /* Slightly shorter for research sections */
+    max-width: 100ch;
 }
 
-/* Harvard/Smithsonian color accent */
 .harvard-accent {
     transition: border-bottom 0.3s ease;
-    color: #A51C30; /* Harvard crimson */
+    color: #A51C30;
 }
 
 .harvard-accent:hover {
     border-bottom: 1px solid #A51C30;
+}
+
+/* PROGRESSIVE SIDEBAR SCALING */
+@media (min-width: 1300px) {
+    .header-text {
+        font-size: 1.6em;
+        margin-left: 25px;
+    }
+    
+    .label {
+        font-size: 1.4em;
+    }
+    
+    /* Keep original font sizes for typical laptop screens */
+    .main-name {
+        font-size: 2.7em;
+    }
+    
+    .subtitle {
+        font-size: 1.3em;
+    }
+    
+    h2 {
+        font-size: 2.2em;
+    }
+    
+    h3 {
+        font-size: 2em;
+    }
+    
+    h4 {
+        font-size: 1.2em;
+    }
+    
+    .research-subsection h2 {
+        font-size: 2.5em;
+    }
+    
+    /* Baseline research image size */
+    .research-header-image {
+        max-width: 100%;
+    }
+    
+    /* Keep line left-aligned on desktop */
+    .main-name::after {
+        margin-left: 0px;
+        margin-right: auto;
+    }
+    
+    /* Baseline vertical spacing for overlapping images */
+    .images-2 .image-container:nth-child(1) {
+        top: 5%;
+    }
+    
+    .images-2 .image-container:nth-child(2) {
+        top: 10%;
+    }
+    
+    /* Original paragraph text size */
+    p {
+        font-size: 1em;
+    }
+    
+    /* Ensure research paragraph text inherits scaling */
+    .research-interests, .research-methods {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 1299px) and (min-width: 1150px) {
+    .header-text {
+        font-size: 1.5em;
+        margin-left: 23px;
+    }
+    
+    .label {
+        font-size: 1.3em;
+    }
+    
+    /* Scale down to ~85% of original */
+    .main-name {
+        font-size: 2.3em;
+    }
+    
+    .subtitle {
+        font-size: 1.1em;
+    }
+    
+    h2 {
+        font-size: 1.9em;
+    }
+    
+    h3 {
+        font-size: 1.7em;
+    }
+    
+    h4 {
+        font-size: 1.05em;
+    }
+    
+    .research-subsection h2 {
+        font-size: 2.1em;
+    }
+    
+    /* Scale paragraph text to 85% */
+    p {
+        font-size: 0.85em;
+    }
+    
+    /* Ensure research paragraph text inherits scaling */
+    .research-interests, .research-methods {
+        font-size: 0.85em;
+    }
+    
+    /* Scale down research images */
+    .research-header-image {
+        max-width: 85%;
+    }
+    
+    /* Add vertical spacing for overlapping images */
+    .images-2 .image-container:nth-child(1) {
+        top: 5%;
+    }
+    
+    .images-2 .image-container:nth-child(2) {
+        top: 30%;
+    }
+}
+
+@media (max-width: 1149px) and (min-width: 1025px) {
+    .header-text {
+        font-size: 1.4em;
+        margin-left: 20px;
+    }
+    
+    .label {
+        font-size: 1.2em;
+    }
+    
+    /* Scale down to ~70% of original */
+    .main-name {
+        font-size: 1.9em;
+    }
+    
+    .subtitle {
+        font-size: 0.95em;
+    }
+    
+    h2 {
+        font-size: 1.55em;
+    }
+    
+    h3 {
+        font-size: 1.4em;
+    }
+    
+    h4 {
+        font-size: 0.9em;
+    }
+    
+    .research-subsection h2 {
+        font-size: 1.75em;
+    }
+    
+    /* Scale paragraph text to 70% */
+    p {
+        font-size: 0.7em;
+    }
+    
+    /* Ensure research paragraph text inherits scaling */
+    .research-interests, .research-methods {
+        font-size: 0.7em;
+    }
+    
+    /* Scale down research images more dramatically */
+    .research-header-image {
+        max-width: 70%;
+    }
+    
+    /* Add more vertical spacing for overlapping images */
+    .images-2 .image-container:nth-child(1) {
+        top: 0%;
+    }
+    
+    .images-2 .image-container:nth-child(2) {
+        top: 45%;
+    }
+}
+
+/* TABLET RESPONSIVE (768px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .sidebar {
+        width: 25vw;
+    }
+    
+    main {
+        margin-left: 25vw;
+        margin-right: 5vw;
+    }
+    
+    .subtle-grey-patches {
+        margin-left: 25vw;
+        margin-right: 5vw;
+    }
+    
+    footer {
+        margin-left: 25vw;
+        margin-right: 5vw;
+    }
+    
+    /* Smaller sidebar text for tablet */
+    .header-text {
+        font-size: 1.2em;
+        margin-left: 15px;
+    }
+    
+    .nav-container {
+        left: 10%;
+    }
+    
+    .label {
+        font-size: 1em;
+    }
+    
+    /* Bio section adjustments for tablet */
+    .main-name {
+        font-size: 2em;
+        margin-right: 0;
+        text-align: center;
+    }
+    
+    .main-name::after {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .subtitle {
+        font-size: 1.2em;
+        margin-right: 0;
+        text-align: center;
+    }
+    
+    /* Reposition headshot for tablet */
+    .headshot {
+        position: static;
+        display: block;
+        width: 50%;
+        max-width: 300px;
+        margin: 20px auto;
+        border-radius: 20px;
+    }
+    
+    /* Adjust bio text container */
+    .bio {
+        margin-right: 0;
+        margin-top: 20px;
+    }
+    
+    /* Reposition contact info */
+    .bio-contact {
+        position: static;
+        text-align: center;
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #f8f9fa;
+        border-radius: 10px;
+    }
+    
+    /* Linear layout for tablet main content */
+    .research-header {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        gap: 20px;
+    }
+    
+    .images-1, .content-1, .content-2, .images-2 {
+        grid-column: 1;
+    }
+    
+    .images-1 {
+        grid-row: 1;
+        height: auto;
+        display: block;
+    }
+    
+    .content-1 {
+        grid-row: 2;
+    }
+    
+    .content-2 {
+        grid-row: 3;
+    }
+    
+    .images-2 {
+        grid-row: 4;
+        height: auto;
+        display: block;
+    }
+    
+    /* Inline image positioning for tablet - make them truly inline */
+    .images-1 .image-container,
+    .images-2 .image-container {
+        position: static !important;
+        display: block;
+        margin: 15px auto;
+        text-align: center;
+        z-index: auto;
+    }
+    
+    .images-1 .image-container .research-header-image,
+    .images-2 .image-container .research-header-image {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+    }
+    
+    /* Project layout for tablet */
+    .project-item {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 15px;
+    }
+    
+    .project-item h4 {
+        grid-column: 1;
+        grid-row: 1;
+        text-align: center;
+    }
+    
+    .project-item p {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    
+    .project-item img {
+        grid-column: 1;
+        grid-row: 3;
+        padding: 0;
+        margin: 15px 0;
+        max-width: 100%;
+    }
+    
+    /* Adjust research section headers */
+    .research-subsection h2 {
+        font-size: 2em;
+        text-align: center;
+    }
+    
+    .research-subsection h2::after {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* MOBILE RESPONSIVE (below 768px) */
+@media (max-width: 768px) {
+    /* Hide desktop sidebar completely */
+    .sidebar {
+        display: none;
+    }
+    
+    /* Show mobile header */
+    .mobile-header {
+        display: block;
+    }
+    
+    /* Reset main content margins */
+    main {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 20px;
+    }
+    
+    .subtle-grey-patches {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    footer {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 20px;
+    }
+    
+    /* Adjust bio section for mobile */
+    #bio {
+        padding: 20px;
+        position: relative;
+    }
+    
+    .main-name {
+        font-size: 2.2em;
+        margin: 0;
+        text-align: center;
+    }
+    
+    .main-name::after {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .subtitle {
+        font-size: 1.1em;
+        margin: 10px 0 20px 0;
+        text-align: center;
+    }
+    
+    /* Reposition headshot for mobile */
+    .headshot {
+        position: static;
+        display: block;
+        width: 60%;
+        max-width: 250px;
+        margin: 20px auto;
+        border-radius: 20px;
+    }
+    
+    /* Adjust bio text container */
+    .bio {
+        margin-right: 0;
+        margin-top: 20px;
+    }
+    
+    /* Reposition contact info */
+    .bio-contact {
+        position: static;
+        text-align: center;
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #f8f9fa;
+        border-radius: 10px;
+    }
+    
+    /* Show mobile social links */
+    .mobile-socials {
+        display: flex;
+    }
+    
+    /* Adjust research section */
+    .research-header {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        gap: 20px;
+    }
+    
+    .images-1, .content-1, .content-2, .images-2 {
+        grid-column: 1;
+    }
+    
+    .images-1 {
+        grid-row: 1;
+        height: auto;
+        display: block;
+    }
+    
+    .content-1 {
+        grid-row: 2;
+    }
+    
+    .content-2 {
+        grid-row: 3;
+    }
+    
+    .images-2 {
+        grid-row: 4;
+        height: auto;
+        display: block;
+    }
+    
+    /* Stack images vertically on mobile - ensure all are inline */
+    .images-1 .image-container,
+    .images-2 .image-container {
+        position: static !important;
+        display: block;
+        margin: 15px auto;
+        text-align: center;
+        z-index: auto;
+    }
+    
+    .images-1 .image-container .research-header-image,
+    .images-2 .image-container .research-header-image {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+    
+    /* Adjust research section headers */
+    .research-subsection h2 {
+        font-size: 2em;
+        text-align: center;
+    }
+    
+    .research-subsection h2::after {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    /* Adjust project layout for mobile */
+    .project-item {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 15px;
+        padding: 20px;
+    }
+    
+    .project-item h4 {
+        grid-column: 1;
+        grid-row: 1;
+        text-align: center;
+    }
+    
+    .project-item p {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    
+    .project-item img {
+        grid-column: 1;
+        grid-row: 3;
+        padding: 0;
+        margin: 10px 0;
+        max-width: 100%;
+    }
+    
+    /* Adjust text containers */
+    .text-container {
+        padding: 20px;
+        margin: 15px 0;
+    }
+    
+    /* Adjust typography for mobile */
+    h2 {
+        font-size: 1.8em;
+        text-align: center;
+    }
+    
+    h3 {
+        font-size: 1.5em;
+        text-align: center;
+    }
+    
+    h4 {
+        font-size: 1.1em;
+    }
+    
+    /* Adjust dividers */
+    .divider {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    
+    /* CV section adjustments */
+    #cv h2 {
+        text-align: center;
+    }
+    
+    embed {
+        height: 600px; /* Smaller height for mobile */
+    }
+}
+
+/* SMALL MOBILE (below 480px) */
+@media (max-width: 480px) {
+    main {
+        padding: 15px;
+    }
+    
+    .mobile-name {
+        font-size: 1.8em;
+    }
+    
+    .mobile-subtitle {
+        font-size: 1em;
+    }
+    
+    .main-name {
+        font-size: 1.8em;
+    }
+    
+    .subtitle {
+        font-size: 1em;
+    }
+    
+    .headshot {
+        width: 80%;
+    }
+    
+    .text-container {
+        padding: 15px;
+    }
+    
+    h2 {
+        font-size: 1.5em;
+    }
+    
+    h3 {
+        font-size: 1.3em;
+    }
+    
+    .project-item {
+        padding: 15px;
+    }
+    
+    embed {
+        height: 500px;
+    }
 }
