@@ -75,11 +75,12 @@ main {
 }
 
 .headshot {
-    position: absolute;
-    top: 3%;
-    right: 3%;
+    position: static;     /* or relative */
     width: 40%;
+    max-width: 300px;     /* prevents huge growth on wide screens */
     border-radius: 25px;
+    float: right;         /* if you still want it on the right */
+    margin: 3%;
 }
 
 .bio-contact {
