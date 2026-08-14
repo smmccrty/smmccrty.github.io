@@ -78,9 +78,9 @@ main {
     position: absolute;
     top: 3%;
     right: 3%;
-    width: 40%;
     border-radius: 25px;
-    max-width: 400px; 
+    max-width: 40%; 
+    max-height: 70%;
 }
 
 .bio-contact {
@@ -431,7 +431,7 @@ a:has(img) {
 }
 
 .research-subsection {
-    max-width: 1200px;
+    
     margin: 0 auto;
     margin-bottom: 30px;
     margin-top: 20px;
@@ -439,17 +439,6 @@ a:has(img) {
 
 .research-subsection h2 {
     font-size: 2.5em;
-}
-
-.research-subsection h2::after {
-    content: '';
-    display: block;
-    margin-top: 10px;
-    margin-left: 0px;
-    width: 60px;
-    height: 3px;
-    background: linear-gradient(90deg, #838282, #adadad);
-    border-radius: 2px;
 }
 
 .research-header {
@@ -598,13 +587,24 @@ a:has(img) {
 }
 
 .project-item img {
-  width: 75%;      /* or whatever fraction */
   display: block; 
   margin-left: auto;
   margin-right: auto;
   height: auto;
   padding-top: 20px;
   max-width: 100%;    /* prevents overflow */
+}
+
+.project-item .plot1 {
+    width: 40%;
+}
+
+.project-item .plot2 {
+    width: 75%;
+}
+
+.project-item .plot3 {
+    width: 40%;
 }
 
 .research-interests p,
@@ -954,11 +954,6 @@ a:has(img) {
         font-size: 2em;
         text-align: center;
     }
-    
-    .research-subsection h2::after {
-        margin-left: auto;
-        margin-right: auto;
-    }
 }
 
 /* MOBILE RESPONSIVE (below 768px) */
@@ -1097,11 +1092,6 @@ a:has(img) {
     .research-subsection h2 {
         font-size: 2em;
         text-align: center;
-    }
-    
-    .research-subsection h2::after {
-        margin-left: auto;
-        margin-right: auto;
     }
     
     /* Adjust project layout for mobile */
