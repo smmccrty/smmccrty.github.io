@@ -479,36 +479,32 @@ a:has(img) {
     filter: invert(100%) brightness(1.1);
 }
 
-/* WIDE SCREEN CAP (1440px reference and up)
- * Past 1440px, the sidebar keeps scaling in width with the viewport (20vw)
- * but shifts right by the same amount the content column is inset, so it
- * stays flush against main with no gap between them - the background
- * shows up as bg-sidebar-main-bg (a matching gap on the outside of each),
- * not sidebar-bg-main-bg. The content column (main/subtle-grey-patches/
- * footer) freezes at its 1440px width - 1008px - instead of growing
- * further. main/footer's percentage padding is pinned to its 1440px value
- * too - percentage padding resolves against the viewport, not the now-
- * frozen box, so left unpinned it would keep eating into the fixed-width
- * box and shrink everything inside main (the headshot included) as the
- * viewport grows past 1440px. */
-@media (min-width: 1440px) {
-    .sidebar {
-        left: calc(40vw - 504px);
-    }
-
+/* WIDE SCREEN CAP (1600px reference and up)
+ * Past 1600px, the sidebar keeps scaling with the viewport (20vw, still
+ * flush against the true left edge - it's transparent, so there's no need
+ * to inset it too). The content column (main/subtle-grey-patches/footer)
+ * freezes at its 1600px width - 1120px - and is centered in the remaining
+ * space to the right of the sidebar, so the same amount of background
+ * shows on both sides of main instead of it growing further.
+ * main/footer's percentage padding is pinned to its 1600px value too -
+ * percentage padding resolves against the viewport, not the now-frozen
+ * box, so left unpinned it would keep eating into the fixed-width box and
+ * shrink everything inside main (the headshot included) as the viewport
+ * grows past 1600px. */
+@media (min-width: 1600px) {
     main,
     .subtle-grey-patches,
     footer {
-        margin-left: calc(60vw - 504px);
-        margin-right: calc(40vw - 504px);
+        margin-left: calc(60vw - 560px);
+        margin-right: calc(40vw - 560px);
     }
 
     main {
-        padding: 40px 50.4px 40px 50.4px;
+        padding: 40px 56px 40px 56px;
     }
 
     footer {
-        padding: 72px;
+        padding: 80px;
     }
 }
 
