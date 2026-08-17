@@ -480,23 +480,28 @@ a:has(img) {
 }
 
 /* WIDE SCREEN CAP (1600px reference and up)
- * Past 1600px, the sidebar keeps scaling with the viewport (20vw, still
- * flush against the true left edge - it's transparent, so there's no need
- * to inset it too). The content column (main/subtle-grey-patches/footer)
- * freezes at its 1600px width - 1120px - and is centered in the remaining
- * space to the right of the sidebar, so the same amount of background
- * shows on both sides of main instead of it growing further.
+ * Past 1600px, main (and subtle-grey-patches/footer, which share its
+ * margins) freezes at its 1600px width - 1120px - and is truly centered
+ * in the full viewport (equal margin on both sides), rather than growing
+ * further. The sidebar's width is recalculated to exactly fill the gap
+ * from the true left edge up to main's left edge, so it stays flush
+ * against main with zero gap between them - the same margin that shows
+ * as plain background on main's right shows as the sidebar on its left.
  * main/footer's percentage padding is pinned to its 1600px value too -
  * percentage padding resolves against the viewport, not the now-frozen
  * box, so left unpinned it would keep eating into the fixed-width box and
  * shrink everything inside main (the headshot included) as the viewport
  * grows past 1600px. */
 @media (min-width: 1600px) {
+    .sidebar {
+        width: calc(50vw - 560px);
+    }
+
     main,
     .subtle-grey-patches,
     footer {
-        margin-left: calc(60vw - 560px);
-        margin-right: calc(40vw - 560px);
+        margin-left: calc(50vw - 560px);
+        margin-right: calc(50vw - 560px);
     }
 
     main {
