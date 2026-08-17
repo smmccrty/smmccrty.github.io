@@ -18,32 +18,32 @@ body {
 
 /*
  * Fluid type scale: font sizes below use clamp(min, A + Bvw, max) so they
- * scale continuously with viewport width instead of jumping between fixed
- * breakpoints. Each base-level rule below is tuned for the desktop layout
- * (viewport >= 1025px, where the sidebar is present but nothing else about
- * the layout changes) and holds flat at its min value below that, since the
- * tablet/mobile media queries further down override it with their own
- * fluid ranges for their layout regimes.
+ * scale continuously with viewport width between the tablet cutoff
+ * (1025px) and the 1440px reference width, then hold flat past that point
+ * since main's width also freezes at 1440px (see the min-width:1440px
+ * rule further down) - text stops growing once the container it lives in
+ * stops growing. Below 1025px, the tablet/mobile media queries override
+ * these with their own fluid ranges for their layout regimes.
  */
 h2 {
     color: #000000;
     font-weight: 500;
     margin-bottom: 30px;
-    font-size: clamp(1.55rem, 0.675rem + 1.366vw, 2.86rem);
+    font-size: clamp(1.55rem, -1.6855rem + 5.0506vw, 2.86rem);
 }
 
 h3 {
     color: #1a1a1a;
     font-weight: 400;
     margin-bottom: 20px;
-    font-size: clamp(1.4rem, 0.599rem + 1.251vw, 2.6rem);
+    font-size: clamp(1.4rem, -1.5639rem + 4.6265vw, 2.6rem);
 }
 
 h4 {
     color: #2a2a2a;
     font-weight: 500;
     margin-bottom: 15px;
-    font-size: clamp(0.9rem, 0.459rem + 0.688vw, 1.56rem);
+    font-size: clamp(0.9rem, -0.7301rem + 2.5446vw, 1.56rem);
 }
 
 p {
@@ -51,7 +51,7 @@ p {
     max-width: 100ch;
     margin-top: 0px;
     margin-bottom: 0px;
-    font-size: clamp(1rem, 0.8rem + 0.313vw, 1.3rem);
+    font-size: clamp(1rem, 0.259rem + 1.1566vw, 1.3rem);
 }
 
 section {
@@ -128,9 +128,9 @@ embed {
     position: relative;
     left: 3%;
     color: #ffffff;
-    font-size: clamp(1.4rem, 0.946rem + 0.709vw, 2.08rem);
+    font-size: clamp(1.4rem, -0.2795rem + 2.6217vw, 2.08rem);
     margin-bottom: 20px;
-    margin-left: clamp(1.25rem, 0.728rem + 0.814vw, 2.031rem);
+    margin-left: clamp(1.25rem, -0.6796rem + 3.012vw, 2.0312rem);
 }
 
 .header-text h1 {
@@ -218,7 +218,7 @@ embed {
 
 .nav-label {
     margin-left: 20px;
-    font-size: clamp(1.2rem, 0.786rem + 0.646vw, 1.82rem);
+    font-size: clamp(1.2rem, -0.3313rem + 2.3904vw, 1.82rem);
     font-weight: 500;
     color: #ffffff;
     text-decoration: none;
@@ -356,7 +356,7 @@ embed {
 }
 
 .main-name {
-    font-size: clamp(1.9rem, 0.825rem + 1.678vw, 3.51rem);
+    font-size: clamp(1.9rem, -2.0765rem + 6.2072vw, 3.51rem);
     margin-left: 20px;
     margin-bottom: 0;
 }
@@ -374,7 +374,7 @@ embed {
 }
 
 .subtitle {
-    font-size: clamp(0.95rem, 0.456rem + 0.771vw, 1.69rem);
+    font-size: clamp(0.95rem, -0.8777rem + 2.853vw, 1.69rem);
     margin-left: 20px;
 }
 
@@ -384,7 +384,7 @@ embed {
 }
 
 .research-subsection h2 {
-    font-size: clamp(1.75rem, 0.748rem + 1.564vw, 3.25rem);
+    font-size: clamp(1.75rem, -1.9548rem + 5.7831vw, 3.25rem);
 }
 
 .projects-container {
@@ -488,6 +488,24 @@ a:has(img) {
 
 .email:hover, .orcid:hover {
     filter: invert(100%) brightness(1.1);
+}
+
+/* WIDE SCREEN CAP (1440px reference and up)
+ * Past 1440px, the sidebar keeps scaling with the viewport (20vw) but the
+ * content column (main/subtle-grey-patches/footer) freezes at its 1440px
+ * width - 1008px - and is centered in the space to the right of the
+ * sidebar instead of growing further, so the cosmic background shows
+ * through on both sides instead of the content stretching to fill it.
+ * Since main's width no longer grows, the fluid font sizes above also
+ * stop growing once they hit their max at 1440px - nothing inside main
+ * needs to keep scaling once its container doesn't. */
+@media (min-width: 1440px) {
+    main,
+    .subtle-grey-patches,
+    footer {
+        margin-left: calc(60vw - 504px);
+        margin-right: calc(40vw - 504px);
+    }
 }
 
 /* TABLET RESPONSIVE (768px - 1024px)
