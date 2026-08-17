@@ -29,21 +29,21 @@ h2 {
     color: #000000;
     font-weight: 500;
     margin-bottom: 30px;
-    font-size: clamp(1.55rem, 0.896rem + 1.022vw, 2.53rem);
+    font-size: clamp(1.55rem, 0.675rem + 1.366vw, 2.86rem);
 }
 
 h3 {
     color: #1a1a1a;
     font-weight: 400;
     margin-bottom: 20px;
-    font-size: clamp(1.4rem, 0.799rem + 0.938vw, 2.3rem);
+    font-size: clamp(1.4rem, 0.599rem + 1.251vw, 2.6rem);
 }
 
 h4 {
     color: #2a2a2a;
     font-weight: 500;
     margin-bottom: 15px;
-    font-size: clamp(0.9rem, 0.58rem + 0.5vw, 1.38rem);
+    font-size: clamp(0.9rem, 0.459rem + 0.688vw, 1.56rem);
 }
 
 p {
@@ -51,7 +51,7 @@ p {
     max-width: 100ch;
     margin-top: 0px;
     margin-bottom: 0px;
-    font-size: clamp(1rem, 0.9rem + 0.156vw, 1.15rem);
+    font-size: clamp(1rem, 0.8rem + 0.313vw, 1.3rem);
 }
 
 section {
@@ -128,9 +128,9 @@ embed {
     position: relative;
     left: 3%;
     color: #ffffff;
-    font-size: clamp(1.4rem, 1.106rem + 0.459vw, 1.84rem);
+    font-size: clamp(1.4rem, 0.946rem + 0.709vw, 2.08rem);
     margin-bottom: 20px;
-    margin-left: clamp(1.25rem, 0.885rem + 0.57vw, 1.797rem);
+    margin-left: clamp(1.25rem, 0.728rem + 0.814vw, 2.031rem);
 }
 
 .header-text h1 {
@@ -218,7 +218,7 @@ embed {
 
 .nav-label {
     margin-left: 20px;
-    font-size: clamp(1.2rem, 0.926rem + 0.427vw, 1.61rem);
+    font-size: clamp(1.2rem, 0.786rem + 0.646vw, 1.82rem);
     font-weight: 500;
     color: #ffffff;
     text-decoration: none;
@@ -323,20 +323,19 @@ embed {
     border: 1px solid rgba(0,0,0,0.05);
 }
 
-/* Bio section */
+/* Bio section: headshot floats right so text wraps around it naturally,
+ * and .bio-contact clears it - guaranteeing the contact info always
+ * renders below the photo regardless of how tall it is. */
 .headshot {
-    position: absolute;
-    top: 3%;
-    right: 3%;
+    float: right;
+    margin: 0 0 20px 20px;
     border-radius: 25px;
     max-width: 40%;
-    max-height: 70%;
 }
 
 .bio-contact {
-    position: absolute;
-    bottom: 0px;
-    right: 4%;
+    clear: right;
+    margin-top: 20px;
     text-align: right;
 }
 
@@ -352,8 +351,7 @@ embed {
 }
 
 .main-name {
-    font-size: clamp(1.9rem, 1.095rem + 1.256vw, 3.105rem);
-    margin-right: 45%;
+    font-size: clamp(1.9rem, 0.825rem + 1.678vw, 3.51rem);
     margin-left: 20px;
     margin-bottom: 0;
 }
@@ -371,8 +369,7 @@ embed {
 }
 
 .subtitle {
-    font-size: clamp(0.95rem, 0.586rem + 0.568vw, 1.495rem);
-    margin-right: 48%;
+    font-size: clamp(0.95rem, 0.456rem + 0.771vw, 1.69rem);
     margin-left: 20px;
 }
 
@@ -382,7 +379,7 @@ embed {
 }
 
 .research-subsection h2 {
-    font-size: clamp(1.75rem, 0.999rem + 1.173vw, 2.875rem);
+    font-size: clamp(1.75rem, 0.748rem + 1.564vw, 3.25rem);
 }
 
 .projects-container {
@@ -558,7 +555,7 @@ a:has(img) {
 
     /* Reposition headshot for tablet */
     .headshot {
-        position: static;
+        float: none;
         display: block;
         width: 50%;
         max-width: 300px;
@@ -574,7 +571,6 @@ a:has(img) {
 
     /* Reposition contact info */
     .bio-contact {
-        position: static;
         text-align: center;
         margin-top: 20px;
         padding: 15px;
@@ -653,7 +649,7 @@ a:has(img) {
 
     /* Reposition headshot for mobile */
     .headshot {
-        position: static;
+        float: none;
         display: block;
         width: clamp(180px, 55vw, 250px);
         margin: 20px auto;
@@ -668,7 +664,6 @@ a:has(img) {
 
     /* Reposition contact info */
     .bio-contact {
-        position: static;
         text-align: center;
         margin-top: 20px;
         padding: 15px;
