@@ -282,6 +282,8 @@ embed {
 
 /* Section background accents */
 #bio {
+    /* Contains the floated headshot/contact so #bio's own height wraps them */
+    display: flow-root;
     background:
         radial-gradient(circle at 15% 20%, rgba(200, 210, 230, 0.3) 0%, transparent 35%),
         radial-gradient(circle at 85% 15%, rgba(230, 220, 200, 0.25) 0%, transparent 40%),
@@ -323,18 +325,21 @@ embed {
     border: 1px solid rgba(0,0,0,0.05);
 }
 
-/* Bio section: headshot floats right so text wraps around it naturally,
- * and .bio-contact clears it - guaranteeing the contact info always
- * renders below the photo regardless of how tall it is. */
+/* Bio section: headshot floats right so text wraps around it naturally.
+ * .bio-contact also floats right and clears the headshot, so it queues up
+ * directly underneath the photo (not a full-width row below everything),
+ * while still being guaranteed to never overlap it regardless of height. */
 .headshot {
     float: right;
-    margin: 0 0 20px 20px;
+    margin: 30px 0 20px 20px;
     border-radius: 25px;
     max-width: 40%;
 }
 
 .bio-contact {
+    float: right;
     clear: right;
+    max-width: 40%;
     margin-top: 20px;
     text-align: right;
 }
@@ -584,6 +589,8 @@ a:has(img) {
     /* Reposition contact info */
     .bio-contact {
         order: 5;
+        float: none;
+        max-width: none;
         text-align: center;
         margin-top: 20px;
         padding: 15px;
@@ -686,6 +693,8 @@ a:has(img) {
     /* Reposition contact info */
     .bio-contact {
         order: 5;
+        float: none;
+        max-width: none;
         text-align: center;
         margin-top: 20px;
         padding: 15px;
