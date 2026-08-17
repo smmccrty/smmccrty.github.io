@@ -10,21 +10,17 @@ function updateConnectingLines() {
         if (!connectingLine) return;
         
         const isCurrentActive = item.classList.contains('active');
-        const prevItem = navItems[index - 1];
         const nextItem = navItems[index + 1];
-        
-        const isPrevActive = prevItem ? prevItem.classList.contains('active') : false;
         const isNextActive = nextItem ? nextItem.classList.contains('active') : false;
-        
+
         // Define colors
         const activeStart = '#06b6d4';
         const activeEnd = '#0891b2';
         const inactiveStart = '#a8a29e';
-        const inactiveEnd = '#78716c';
-        
+
         // Determine gradient based on current and next item states
         let gradient;
-        
+
         if (isCurrentActive && isNextActive) {
             // Both current and next are active - solid active gradient
             gradient = `linear-gradient(180deg, ${activeStart}, ${activeEnd})`;
@@ -35,8 +31,8 @@ function updateConnectingLines() {
             // Current inactive, next active - gradient from inactive to active
             gradient = `linear-gradient(180deg, ${inactiveStart}, ${activeStart})`;
         } else {
-            // Both inactive - solid inactive gradient
-            gradient = inactiveStart//`linear-gradient(180deg, ${inactiveStart}, ${inactiveEnd})`;
+            // Both inactive - solid inactive color
+            gradient = inactiveStart;
         }
         
         connectingLine.style.background = gradient;
@@ -48,14 +44,14 @@ function updateActiveNav(targetSectionId) {
     // Remove active class from all nav items and nodes
     navItems.forEach(navItem => {
         navItem.classList.remove('active');
-        navItem.querySelector('.node').classList.remove('active');
+        navItem.querySelector('.nav-node').classList.remove('active');
     });
-    
+
     // Find and activate the corresponding nav item
     const activeNavItem = document.querySelector(`[data-section="${targetSectionId}"]`);
     if (activeNavItem) {
         activeNavItem.classList.add('active');
-        activeNavItem.querySelector('.node').classList.add('active');
+        activeNavItem.querySelector('.nav-node').classList.add('active');
     }
     
     // Update connecting lines after state change
