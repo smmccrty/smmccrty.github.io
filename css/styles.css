@@ -123,6 +123,7 @@ embed {
 }
 
 .header-text h1 {
+    font-size: 0.85em;
     line-height: 1.1;
 }
 
@@ -344,26 +345,9 @@ embed {
     margin-right: 45%;
 }
 
-.main-name {
-    font-size: 2.7em;
-    margin-left: 20px;
-    margin-bottom: 0;
-}
-
-.main-name::after {
-    content: '';
-    display: block;
-    margin-left: 0px;
-    margin-right: auto;
-    margin-top: 10px;
-    width: 60px;
-    height: 3px;
-    background: linear-gradient(90deg, #838282, #adadad);
-    border-radius: 2px;
-}
-
 .subtitle {
     font-size: 1.3em;
+    margin-top: 30px;
     margin-left: 20px;
 }
 
@@ -581,28 +565,17 @@ a:has(img) {
     }
 
     /* Bio section adjustments for tablet */
-    .main-name {
-        order: 1;
-        font-size: clamp(1.9rem, 3.105rem - 1.882vw, 2.2rem);
-        margin-right: 0;
-        text-align: center;
-    }
-
-    .main-name::after {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
     .subtitle {
-        order: 2;
+        order: 1;
         font-size: clamp(0.95rem, 1.552rem - 0.941vw, 1.1rem);
+        margin-top: 0;
         margin-right: 0;
         text-align: center;
     }
 
     /* Reposition headshot for tablet */
     .headshot {
-        order: 3;
+        order: 2;
         float: none;
         display: block;
         width: 50%;
@@ -613,14 +586,14 @@ a:has(img) {
 
     /* Adjust bio text container */
     .bio {
-        order: 4;
+        order: 3;
         margin-right: 0;
         margin-top: 20px;
     }
 
     /* Reposition contact info */
     .bio-contact {
-        order: 5;
+        order: 4;
         float: none;
         max-width: none;
         text-align: center;
@@ -686,28 +659,16 @@ a:has(img) {
         position: relative;
     }
 
-    .main-name {
-        order: 1;
-        font-size: clamp(1.8rem, 1.514rem + 1.429vw, 2.2rem);
-        margin: 0;
-        text-align: center;
-    }
-
-    .main-name::after {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
     .subtitle {
-        order: 2;
+        order: 1;
         font-size: clamp(1rem, 0.929rem + 0.357vw, 1.1rem);
-        margin: 10px 0 20px 0;
+        margin: 0 0 20px 0;
         text-align: center;
     }
 
     /* Reposition headshot for mobile */
     .headshot {
-        order: 3;
+        order: 2;
         float: none;
         display: block;
         width: clamp(180px, 55vw, 250px);
@@ -717,14 +678,14 @@ a:has(img) {
 
     /* Adjust bio text container */
     .bio {
-        order: 4;
+        order: 3;
         margin-right: 0;
         margin-top: 20px;
     }
 
     /* Reposition contact info */
     .bio-contact {
-        order: 5;
+        order: 4;
         float: none;
         max-width: none;
         text-align: center;
