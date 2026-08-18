@@ -11,7 +11,7 @@ body {
     background-image: url('../assets/jwst_deep_blur.webp');
     background-size: cover;
     background-repeat: repeat;
-    background-position: -30px -150px;
+    /*background-position: -30px -150px;*/
     font-family: 'Lexend', sans-serif;
     font-weight: 300;
 }
@@ -123,7 +123,7 @@ embed {
 }
 
 .header-text h1 {
-    font-size: 0.85em;
+    font-size: 1.5em;
     line-height: 1.1;
 }
 
@@ -346,9 +346,9 @@ embed {
 }
 
 .subtitle {
-    font-size: 1.3em;
+    font-size: 1.5em;
     margin-top: 30px;
-    margin-left: 20px;
+    margin-left: 10px;
 }
 
 /* Research section */
@@ -370,7 +370,7 @@ embed {
     padding-top: 10px;
     background-color: #fefbf7;
     border-radius: 15px;
-    border-left: 4px solid #3b82f6;
+    /*border-left: 4px solid #3b82f6;*/
 }
 
 .project-item img {
@@ -392,6 +392,10 @@ embed {
 
 .project-item .dm-correlation-plot {
     width: 40%;
+}
+
+.project-item .lens-samples {
+    width: 80%;
 }
 
 /* Shared link and icon styles */

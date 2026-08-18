@@ -137,29 +137,44 @@
 
             <div class="projects-container">
                 <div class="project-item">
-                    <h3>Cosmic baryons with Fast Radio Bursts</h3>
-                    <a href="https://arxiv.org/abs/2602.16781" class="in-text-link"> McCarty, S., Connor, L., & Konietzka, R. (2026a). <i>The CGM with local universe FRBs: evidence of strong AGN feedback in a massive elliptical galaxy.</i></a>
-                    <br>
-                    <a href="https://arxiv.org/abs/2608.11296" class="in-text-link"> McCarty, S. et al. (2026b). <i>A new measurement of the FRB DM-galaxy cross correlation and a first joint analysis with the kinematic SZ effect.</i></a>
+                    <h3>Tracing cosmic baryons with Fast Radio Bursts</h3>
+                    <h4><a href="https://arxiv.org/abs/2602.16781" class="in-text-link"> McCarty, S., Connor, L., & Konietzka, R. (2026a). <i>The CGM with local universe FRBs: evidence of strong AGN feedback in a massive elliptical galaxy.</i></a></h4>
+                    <h4><a href="https://arxiv.org/abs/2608.11296" class="in-text-link"> McCarty, S. et al. (2026b). <i>A new measurement of the FRB DM-galaxy cross correlation and a first joint analysis with the kinematic SZ effect.</i></a></h4>
 
                     <p><br> Most of the baryonic matter in the universe exists in diffuse, hard to measure gas around and between galaxies. 
-                        This is the circumgalactic, intragroup, intracluster and intergalactic medium.
+                        This is the circumgalactic, intragroup, intracluster and intergalactic medium. We know surprisingly little about this gas, despite the fact that it is
+                        crucial for the process of galaxy formation and evolutuion, ultimately supplying the gas that forms stars and planets. It is further becoming a leading nuisance to
+                        cosmological measurements, and next generation cosmological surveys such as by Rubin may be limited by our understanding of this gas.
+                        <br><br>
                         Fast radio bursts (FRBs) are a promising new probe this gas. In McCarty 2026a, I used local universe FRBs to 
-                        study the circumgalactic medium of the Milky Way and relatively nearby galaxies. 
+                        study the circumgalactic medium (CGM) of the Milky Way (MW) and relatively nearby galaxies. The key idea is that nearby FRBs travel through less of the cosmic web. The dispersion measure (DM)
+                        of nearby FRBs will be dominated by the MW and the host galaxy, rather than the intergalactic medium. Because the MW contribution is known (sort of), this allows us to isolate the CGM of the host galaxy. See the pretty diagram below.
                     </p>
+                    <br>
                     <img class="cgm-schematic" src="assets/test.png" alt="Schematic of using local universe FRBs to probe the circumgalactic medium of nearby galaxies.">
-                    <br><br>
+                    <br><br><br>
 
+                    <p> What we found is that the halos of the host galaxies in our sample contain much less gas than would be expected from a Universe with only gravity. Therefore baryonic processes like exploding stars and super massive black hole jets
+                    are lifting the gas out of the halos of these galaxies. Astrophysicists call this "feedback". One galaxy in particular, a massive elliptical with very little active star formation, has a halo that is almost completely devoid of gas.
+                    This type of galaxy is a prime candidate for feedback from an active galactic nucleus (AGN). 
+                    </p>
+                    <br>
                     <img class="gas-fraction-plot" src="assets/fgas.png" alt="The halo gas fraction as a function of mass.">
 
-                    <br><br>
+                    <br><br><br>
 
+                    <p> While these types of targeted studies are insightful for individual systems, what we would like is a census of many galaxies. In McCarty 2026b, I used a sample of ~100 localized FRBs to measure the cross correlation between
+                        DM and galaxies from the Dark Energy Spectroscopic Instrument (DESI) survey. We measure this statistic at the highest signifigance to date and analyze our measurement in the
+                        context of cosmological simulations and theoretical models. We again find strong evidence that the gas in galactic halos is expelled by baryonic feedback. This is a pioneering measurement that will be improved with the next generation of FRB surveys, 
+                        such as the Deep Synoptic Array Chronoscope, which will localize thousands of FRBs per year.
+                    </p>
+                    <br>
                     <img class="dm-correlation-plot" src="assets/flamingo.png" alt="FRB DM-galaxy cross correlation compared to the FLAMINGO simulations.">
 
                 </div>
                 <div class="project-item">
                     <h3>Radio Strong Lensing</h3>
-                    <a href="https://ui.adsabs.harvard.edu/abs/2024arXiv241201746M" class="in-text-link"> McCarty, S., & Connor, L. (2025). <i>Strong gravitational lensing with upcoming wide-field radio surveys.</i> Monthly Notices of the Royal Astronomical Society, 542, 2494, doi: 10.1093/mnras/staf1381436</a>
+                    <h4><a href="https://ui.adsabs.harvard.edu/abs/2024arXiv241201746M" class="in-text-link"> McCarty, S., & Connor, L. (2025). <i>Strong gravitational lensing with upcoming wide-field radio surveys.</i></a></h4>
                     <p><br> Strong gravitational lensing has important astrophysical and cosmological applications. Strong lensing science at radio wavelengths has distinct advantages,
                         but has been limited for decades by small sample size. In McCarty and Connor 2025, I forescasted the number of strong lenses expected to be discovered by the upcoming DSA-2000 and SKA-mid radio telescopes,
                         finding that they will each discover as many as 10<sup>5</sup> new lenses. In Wu et al. (in prep), I demonstrated that emerging deep learning radio imaging algorithms
@@ -168,7 +183,7 @@
                         identified in the Very Large Array Sky Survey. These radio lenses will provide immediate science gains but also help pave the way for lensing science with the next 
                         generation of radio telescopes. 
                     </p>
-                    <img src="assets/lens_samples.png" alt="Simulated radio strong lens systems.">
+                    <img class="lens-samples" src="assets/lens_samples.png" alt="Simulated radio strong lens systems.">
                 </div>
             </div>
         </section>
